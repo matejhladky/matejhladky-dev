@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('./assets/fonts/LibreBaskerville/LibreBaskerville-Regular.ttf') format('truetype');
+  font-style: 'normal';
+  font-weight: '400';
+}
+
+:root {
+  --ff-primary: 'Libre Baskerville', sans-serif;
+}
+
