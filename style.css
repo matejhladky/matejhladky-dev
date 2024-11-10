@@ -1,8 +1,8 @@
 /* ---------------------- CSS RESET (START) ---------------------- */
+
 *,
 *::before,
-*::after {
-  box-sizing: border-box;
+*::after { box-sizing: border-box;
 }
 
 * {
@@ -56,6 +56,16 @@ svg {
   }
 }
 
+/* Custom */
+*:focus {
+    outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-neutral-900);
+}
+
 /* ---------------------- CSS RESET (END) ---------------------- */
 
 @font-face {
@@ -67,6 +77,8 @@ svg {
 
 :root {
   --clr-neutral-100: #ffffff;
+  --clr-neutral-700: grey;
+  --clr-neutral-800: #424242;
   --clr-neutral-900: #000000;
 
   --clr-accent-300: #a3b8e2;
@@ -80,21 +92,26 @@ svg {
   --fw-regular: 400;
   --fw-bold: 700;
 
-  --fs-300: ; /* ideally avoid */
+  --fs-300: 0.875rem; /* ideally avoid */
   --fs-400: 1rem; /* body size */
-  --fs-500: 1.5rem;
-  --fs-600: 2rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.5rem;
+  --fs-700: 2rem;
 
-  --fs-title: var(--fs-600);
+  --fs-title: var(--fs-700);
+  --fs-primary-heading: var(--fs-700);
+  --fs-secondary-heading: var(--fs-600);
   --fs-body: var(--fs-400);
-  --fs-primary-heading: var(--fs-500);
-  --fs-secondary-heading: var(--fs-500);
   --fs-nav: var(--fs-300);
 }
 
 /* Utility classes */
 .text-neutral-900 {
   color: var(--clr-neutral-900);
+}
+
+.text-neutral-700 {
+  color: var(--clr-neutral-700);
 }
 
 .bg-neutral-100 {
@@ -138,7 +155,7 @@ svg {
 }
 
 .container {
-  --max-width: 960px;
+  --max-width: 1200px;
   --padding: 1rem;
 
   width: min(var(--max-width), 100% - var(--padding) * 2);
@@ -147,6 +164,10 @@ svg {
 
 .text-center {
   text-align: center;
+}
+
+.text-highlight {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 60%, var(--clr-accent-300) 50%);
 }
 
 /* General */
@@ -162,11 +183,16 @@ header {
   margin-top: 2rem;
 }
 
+header h1 {
+  margin-bottom: 0.7rem;
+}
+
 #nav {
   border-top: solid 1px var(--clr-neutral-900);
   border-bottom: solid 1px var(--clr-neutral-900);
   padding-top: 0.7rem;
   padding-bottom: 0.7rem;
+  margin-bottom: 2.5rem;
 }
 
 .nav-list {
@@ -175,13 +201,31 @@ header {
   gap: 2rem;
 }
 
-.nav-list a {
-  text-decoration: none;
-  color: var(--clr-neutral-900);
-}
-
 /* TODO: Redudant, copies text-highlight utility */
 .nav-list .active {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 60%, var(--clr-accent-300) 50%);
 }
 
+.nav-link {
+  text-decoration: none;
+  color: var(--clr-neutral-900);
+  display: block;
+  position: relative; /* Required for pseudo-element */
+  overflow: hidden; /* Hide the background gradient */
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 60%, var(--clr-accent-300) 50%);
+  transition: left 0.3s; /* Transition the left position */
+  z-index: -1;
+}
+
+.nav-link:hover::before {
+  left: 0; /* Move the highlight to the right on hover */
+}
