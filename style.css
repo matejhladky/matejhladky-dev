@@ -66,6 +66,28 @@ svg {
 }
 
 :root {
+  --clr-neutral-100: #ffffff;
+  --clr-neutral-900: #000000;
+
+  --clr-accent-300: #a3b8e2;
+
   --ff-primary: 'Libre Baskerville', sans-serif;
+  --ff-secondary: 'Libre Baskerville', sans-serif;
+
+  --ff-heading: var(--ff-primary);
+  --ff-body: var(--ff-primary);
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  --fs-300: ; /* ideally avoid */
+  --fs-400: 1rem; /* body size */
+  --fs-500: 1.5rem;
+  --fs-600: 2rem;
+
+  --fs-title: var(--fs-600);
+  --fs-body: var(--fs-400);
+  --fs-primary-heading: var(--fs-500);
+  --fs-secondary-heading: var(--fs-500);
 }
 
