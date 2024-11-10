@@ -89,6 +89,7 @@ svg {
   --fs-body: var(--fs-400);
   --fs-primary-heading: var(--fs-500);
   --fs-secondary-heading: var(--fs-500);
+  --fs-nav: var(--fs-300);
 }
 
 /* Utility classes */
@@ -134,5 +135,53 @@ svg {
 
 .fs-600 {
   font-size: var(--fs-600);
+}
+
+.container {
+  --max-width: 960px;
+  --padding: 1rem;
+
+  width: min(var(--max-width), 100% - var(--padding) * 2);
+  margin-inline: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* General */
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  color: var(--clr-neutral-900);
+}
+
+header {
+  margin-top: 2rem;
+}
+
+#nav {
+  border-top: solid 1px var(--clr-neutral-900);
+  border-bottom: solid 1px var(--clr-neutral-900);
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: var(--clr-neutral-900);
+}
+
+/* TODO: Redudant, copies text-highlight utility */
+.nav-list .active {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 60%, var(--clr-accent-300) 50%);
 }
 
