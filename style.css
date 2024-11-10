@@ -173,6 +173,9 @@ a {
 /* General */
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: var(--ff-body);
   font-size: var(--fs-body);
   font-weight: var(--fw-regular);
@@ -185,6 +188,10 @@ header {
 
 header h1 {
   margin-bottom: 0.7rem;
+}
+
+main {
+  flex: 1;
 }
 
 #nav {
@@ -228,4 +235,15 @@ header h1 {
 
 .nav-link:hover::before {
   left: 0; /* Move the highlight to the right on hover */
+}
+
+footer {
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+footer .container {
+  display: flex;
+  justify-content: center;
+  align-items: bottom;
 }
