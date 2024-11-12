@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matej Hladky</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="header"></div>
+  
+  <main id="book-list">
+    <div class="container">
+      <div class="inner-content">
+        <h1 class="fs-primary-heading fw-bold text-center">Mateova (budoucí) Knihovna</h1>
+        <h2 id="prioritized" class="fs-secondary-heading fw-bold">Prioritní</h2>
+        <ul id="prioritized-list"></ul>
+        <h2 id="other" class="fs-secondary-heading fw-bold">Ostatní</h2>
+        <ul id="other-list"></ul>
+      </div>
+    </div>
+  </main>
+ 
+  <div id="footer"></div>
+
+  <script type="module" src="main.js"></script>
+  <script type="module" src="/scripts/componentLoader.js"></script>
+  <script type="module" src="/scripts/bookLoader.js"></script>
+</body>
+</html>
+
