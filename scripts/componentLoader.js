@@ -19,3 +19,4 @@ function setActiveLink() {
 
 loadComponent("#footer", "/components/footer.html");
 loadComponent("#header", "/components/header.html");
+loadComponent("#loader", "/components/loader.html");
