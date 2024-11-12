@@ -5,8 +5,6 @@ import { Client } from '@notionhq/client';
 const notionClient = new Client({ auth: process.env.NOTION_API_KEY });
 const databaseId = process.env.NOTION_DATABASE_ID;
 
-export const dynamic = 'force-dynamic';
-
 async function fetchDatabaseEntries(client, databaseId) {
   const results = [];
   let hasMore = true;
@@ -40,7 +38,7 @@ function formatBooksData(rawData) {
 }
 
 // Vercel API handler
-export async function GET(request) {
+export default async function handler(req, res) {
   try {
     const rawData = await fetchDatabaseEntries(notionClient, databaseId);
     const formattedData = formatBooksData(rawData);
@@ -49,16 +47,10 @@ export async function GET(request) {
       console.log("Fields available in each book entry:", rawData[0].properties);
     }
 
-    return new Response(JSON.stringify(formattedData), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    res.status(200).json(formattedData);
   } catch (error) {
-    console.error("Error in GET handler:", error);
-    return new Response(JSON.stringify({ error: "Failed to fetch data" }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    console.error("Error in handler:", error);
+    res.status(500).json({ error: "Failed to fetch data" });
   }
 }
 

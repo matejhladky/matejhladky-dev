@@ -1,0 +1,13 @@
+
+{
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "books.html", "use": "@vercel/static" },
+    { "src": "api/**/*.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/books", "dest": "/books.html" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
