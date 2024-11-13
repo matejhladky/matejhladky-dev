@@ -1,11 +1,22 @@
-async function loadComponent(selector, filePath) {
+export async function loadComponent(selector, filePath) {
   const element = document.querySelector(selector);
   if (element) {
-    const response = await fetch(filePath);
-    const html = await response.text();
-    element.innerHTML = html;
+    try {
+      const response = await fetch(filePath);
+      if (!response.ok) {
+        console.error(`Failed to fetch ${filePath}: ${response.statusText}`);
+        return;
+      }
 
-    setActiveLink();
+      const html = await response.text();
+      element.innerHTML = html;
+
+      // setActiveLink();
+    } catch (error) {
+      console.error(`Error loading component from ${filePath}:`, error);
+    }
+  } else {
+    console.error(`Element with selector ${selector} not found.`);
   }
 }
 
@@ -14,9 +25,7 @@ function setActiveLink() {
   const activeLink = document.querySelector(`.nav-link[data-page="${currentPage}"]`);
   if (activeLink) {
     activeLink.classList.add("active");
+  } else {
+    console.warn(`No active link found for page "${currentPage}"`);
   }
 }
-
-loadComponent("#footer", "./components/footer.html");
-loadComponent("#header", "./components/header.html");
-loadComponent("#loader", "./components/loader.html");
