@@ -163,6 +163,15 @@ a {
   margin-inline: auto;
 }
 
+.inner-content {
+  --max-width: 1000px;
+  --padding: 1rem;
+
+  width: min(var(--max-width), 100% - var(--padding) * 2);
+  margin-inline: auto;
+  text-align: center;
+}
+
 .text-center {
   text-align: center;
 }
@@ -195,6 +204,51 @@ main {
   flex: 1;
 }
 
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-primary {
+  background-color: var(--clr-neutral-900);
+  color: var(--clr-neutral-100);
+}
+
+.btn-primary:hover {
+  background-color: var(--clr-neutral-800);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--clr-neutral-900);
+  border: 2px solid var(--clr-neutral-900);
+}
+
+.btn-outline:hover {
+  background-color: var(--clr-neutral-900);
+  color: var(--clr-neutral-100);
+}
+
+.btn-small {
+  padding: 0.25rem 0.5rem;
+  font-size: var(--fs-300);
+}
+
+.btn-large {
+  padding: 0.75rem 1.5rem;
+  font-size: var(--fs-600);
+}
+
+
 #nav {
   border-top: solid 1px var(--clr-neutral-900);
   border-bottom: solid 1px var(--clr-neutral-900);
@@ -215,7 +269,7 @@ main {
 }
 
 .nav-link {
-  text-decoration: none;
+  text-decoration: nonggVGe;
   color: var(--clr-neutral-900);
   display: block;
   position: relative; /* Required for pseudo-element */
@@ -274,6 +328,42 @@ footer .container {
     40%{background-position:0% 100%, 50%   0%,100%  50%}
     60%{background-position:0%  50%, 50% 100%,100%   0%}
     80%{background-position:0%  50%, 50%  50%,100% 100%}
+}
+
+/* Contact */
+#contact-page {
+  margin-top: 1rem;
+}
+
+.social-links {
+  margin-top: 2rem;
+  padding-left: 1rem; /* don't know why it's not centered */
+}
+
+.social-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-links-item {
+  border: none;
+  margin-right: 1.3rem
+}
+
+.social-links-item .icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--clr-neutral-700);
+}
+
+.social-links-item .icon svg:hover {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--clr-neutral-800);
 }
 
 /* Books */
