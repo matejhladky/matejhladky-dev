@@ -92,7 +92,7 @@ a {
   --clr-accent-300: #a3b8e2;
 
   --ff-primary: 'Libre Baskerville', sans-serif;
-  --ff-secondary: 'WorWork Sans', sans-serif;
+  --ff-secondary: 'Work Sans', sans-serif;
 
   --ff-heading: var(--ff-primary);
   --ff-body: var(--ff-primary);
@@ -171,7 +171,7 @@ a {
 }
 
 .inner-content {
-  --max-width: 1000px;
+  --max-width: 750px;
   --padding: 1rem;
 
   width: min(var(--max-width), 100% - var(--padding) * 2);
@@ -181,6 +181,10 @@ a {
 
 .text-center {
   text-align: center;
+}
+
+.text-start {
+  text-align: start;
 }
 
 .text-highlight {
