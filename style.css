@@ -176,15 +176,10 @@ a {
 
   width: min(var(--max-width), 100% - var(--padding) * 2);
   margin-inline: auto;
-  text-align: center;
 }
 
 .text-center {
   text-align: center;
-}
-
-.text-start {
-  text-align: start;
 }
 
 .text-highlight {
