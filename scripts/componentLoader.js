@@ -11,7 +11,7 @@ export async function loadComponent(selector, filePath) {
       const html = await response.text();
       element.innerHTML = html;
 
-      // setActiveLink();
+      setActiveLink();
     } catch (error) {
       console.error(`Error loading component from ${filePath}:`, error);
     }
