@@ -75,6 +75,13 @@ a {
   font-weight: '400';
 }
 
+@font-face {
+  font-family: 'Work Sans';
+  src: url('./assets/fonts/WorkSans/WorkSans-Regular.ttf') format('truetype');
+  font-style: 'normal';
+  font-weight: '400';
+}
+
 :root {
   --clr-neutral-100: #ffffff;
   --clr-neutral-300: #e2e2e2;
@@ -85,7 +92,7 @@ a {
   --clr-accent-300: #a3b8e2;
 
   --ff-primary: 'Libre Baskerville', sans-serif;
-  --ff-secondary: 'Libre Baskerville', sans-serif;
+  --ff-secondary: 'WorWork Sans', sans-serif;
 
   --ff-heading: var(--ff-primary);
   --ff-body: var(--ff-primary);
