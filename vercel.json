@@ -5,5 +5,6 @@
       { "source": "/about", "destination": "/about.html" },
       { "source": "/contact", "destination": "/contact.html" },
       { "source": "/books", "destination": "/books.html" }
-    ]
+    ],
+    "cleanUrls": true
   }
