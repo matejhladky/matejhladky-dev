@@ -11,6 +11,7 @@ export default defineConfig({
         projects: resolve(__dirname, 'projects.html'),
         about: resolve(__dirname, 'about.html'),
         contact: resolve(__dirname, 'contact.html'),
+        books: resolve(__dirname, 'books.html'),
 
         header: resolve(__dirname, '/components/header.html'),
         footer: resolve(__dirname, '/components/footer.html'),
