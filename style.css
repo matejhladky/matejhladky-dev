@@ -375,6 +375,7 @@ footer .container {
 /* Books */
 #book-list h2 {
   display: none;
+  margin-bottom: 0.5rem;
 }
 
 #book-list ul {

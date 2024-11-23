@@ -23,10 +23,14 @@ async function fetchAndDisplayBooks() {
   const loader = document.getElementById('loader');
   const prioritizedList = document.getElementById('prioritized-list');
   const otherList = document.getElementById('other-list');
+  const prioritizedHeading = document.getElementById('prioritized-heading');
+  const otherHeading = document.getElementById('other-heading');
 
   loader.style.display = 'block';
   prioritizedList.style.display = 'none';
   otherList.style.display = 'none';
+  prioritizedHeading.style.display = 'none';
+  otherHeading.style.display = 'none';
 
   try {
     const response = await fetch('/api/getBooks');
@@ -47,6 +51,8 @@ async function fetchAndDisplayBooks() {
     loader.style.display = 'none';
     prioritizedList.style.display = 'block';
     otherList.style.display = 'block';
+    prioritizedHeading.style.display = 'block';
+    otherHeading.style.display = 'block';
   } catch (error) {
     console.error('Error fetching books:', error);
   }
