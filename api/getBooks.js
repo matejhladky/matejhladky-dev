@@ -1,5 +1,3 @@
-// api/getBooks.js
-
 import { Client } from '@notionhq/client';
 
 const notionClient = new Client({ auth: process.env.NOTION_API_KEY });
@@ -16,7 +14,7 @@ async function fetchDatabaseEntries(client, databaseId) {
         database_id: databaseId,
         start_cursor: nextCursor,
       });
-      
+
       results.push(...response.results);
       hasMore = response.has_more;
       nextCursor = response.next_cursor;
@@ -30,22 +28,21 @@ async function fetchDatabaseEntries(client, databaseId) {
 }
 
 function formatBooksData(rawData) {
-  return rawData.map(item => ({
-    title: item.properties.Name?.title[0]?.plain_text || "Untitled",
-    author: item.properties.Author?.rich_text[0]?.plain_text || "---",
-    prioritized: item.properties.Priority?.checkbox || false
-  }));
+  return rawData
+    .map(item => ({
+      title: item.properties.Name?.title[0]?.plain_text || "Untitled",
+      author: item.properties.Author?.rich_text[0]?.plain_text || "---",
+      prioritized: item.properties.Priority?.checkbox || false,
+      tag: item.properties.Select?.select?.name || null,
+    }))
+    .filter(book => book.tag === "To Buy")
+    .sort((a, b) => a.title.localeCompare(b.title));
 }
 
-// Vercel API handler
 export default async function handler(req, res) {
   try {
     const rawData = await fetchDatabaseEntries(notionClient, databaseId);
     const formattedData = formatBooksData(rawData);
-
-    if (rawData.length > 0) {
-      console.log("Fields available in each book entry:", rawData[0].properties);
-    }
 
     res.status(200).json(formattedData);
   } catch (error) {
@@ -53,4 +50,3 @@ export default async function handler(req, res) {
     res.status(500).json({ error: "Failed to fetch data" });
   }
 }
-

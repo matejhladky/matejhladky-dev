@@ -1,12 +1,15 @@
 function createBookListItem(book) {
   const listItem = document.createElement('li');
 
+  // strip numbers at the beginning of the title
+  const strippedTitle = book.title.replace(/^\d+\.\s*/, '');
+
   const authorSpan = document.createElement('span');
   authorSpan.textContent = book.author || "Unknown Author";
   authorSpan.className = 'author';
 
   const titleSpan = document.createElement('span');
-  titleSpan.textContent = `: ${book.title || "Untitled"}`;
+  titleSpan.textContent = `: ${strippedTitle || "Untitled"}`;
   titleSpan.className = 'title';
 
   listItem.appendChild(authorSpan);
@@ -15,19 +18,19 @@ function createBookListItem(book) {
   return listItem;
 }
 
+
 async function fetchAndDisplayBooks() {
-  document.getElementById('loader').style.display = 'block';
-  document.getElementById('prioritized-heading').style.display = 'none';
-  document.getElementById('other-heading').style.display = 'none';
-  document.getElementById('prioritized-list').style.display = 'none';
-  document.getElementById('other-list').style.display = 'none';
+  const loader = document.getElementById('loader');
+  const prioritizedList = document.getElementById('prioritized-list');
+  const otherList = document.getElementById('other-list');
+
+  loader.style.display = 'block';
+  prioritizedList.style.display = 'none';
+  otherList.style.display = 'none';
 
   try {
     const response = await fetch('/api/getBooks');
     const books = await response.json();
-
-    const prioritizedList = document.getElementById('prioritized-list');
-    const otherList = document.getElementById('other-list');
 
     prioritizedList.innerHTML = '';
     otherList.innerHTML = '';
@@ -41,12 +44,9 @@ async function fetchAndDisplayBooks() {
       }
     });
 
-    document.getElementById('loader').style.display = 'none';
-    document.getElementById('prioritized-heading').style.display = 'block';
-    document.getElementById('other-heading').style.display = 'block';
+    loader.style.display = 'none';
     prioritizedList.style.display = 'block';
     otherList.style.display = 'block';
-
   } catch (error) {
     console.error('Error fetching books:', error);
   }
