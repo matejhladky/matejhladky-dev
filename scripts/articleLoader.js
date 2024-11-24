@@ -1,6 +1,9 @@
 import { formatDate } from "./utils";
 
 async function fetchAndDisplayArticles() {
+    const loader = document.getElementById('loader');
+    loader.style.display = 'block';
+    
     const articlePreviewsList = document.querySelector('.articles-previews-list');
 
     try {
@@ -17,9 +20,10 @@ async function fetchAndDisplayArticles() {
     } catch (error) {
         console.error("Error loading articles:", error);
     }
+
+    loader.style.display = 'none';
 }
 
-// Extracts first image as thumbnail and removes html tags from content
 const processArticle = (content) => {
     let tmp = document.createElement('div');
     tmp.innerHTML = content;
@@ -29,7 +33,7 @@ const processArticle = (content) => {
     if (images.length > 0) { firstImageSrc = images[0].src; }
 
     Array.from(tmp.getElementsByTagName('figcaption')).forEach(figCaption => figCaption.replaceWith(" "));
-    const textContent = (tmp.textContent || tmp.innerText || "").substring(0, 400) + "...";
+    const textContent = (tmp.textContent || tmp.innerText || "").substring(0, 350) + "...";
 
     return { textContent, firstImageSrc };
   };
@@ -46,7 +50,7 @@ const createArticlePreviewComponent = (article) => {
     articlePreview.appendChild(title);
 
     const pubDate = document.createElement('p');
-    pubDate.className = 'pub-date fs-300 text-muted';
+    pubDate.className = 'pub-date fs-300 text-neutral-700 ff-secondary';
     pubDate.textContent = formatDate(article.date_published);
     articlePreview.appendChild(pubDate);
 
@@ -66,7 +70,7 @@ const createArticlePreviewComponent = (article) => {
     
     const contentPreview = document.createElement('p');
     contentPreview.textContent = processedContent.textContent;
-    contentPreview.className = 'fs-400 text-muted';
+    contentPreview.className = 'fs-400 text-neutral-700 ff-secondary';
     flexContainer.appendChild(contentPreview);
 
     articlePreviewContainer.appendChild(articlePreview);

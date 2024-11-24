@@ -76,6 +76,13 @@ a {
 }
 
 @font-face {
+  font-family: 'Roboto Slab';
+  src: url('./assets/fonts/RobotoSlab/RobotoSlab-Regular.ttf') format('truetype');
+  font-style: 'normal';
+  font-weight: '400';
+}
+
+@font-face {
   font-family: 'Work Sans';
   src: url('./assets/fonts/WorkSans/WorkSans-Regular.ttf') format('truetype');
   font-style: 'normal';
@@ -92,7 +99,7 @@ a {
   --clr-accent-300: #a3b8e2;
 
   --ff-primary: 'Libre Baskerville', sans-serif;
-  --ff-secondary: 'Work Sans', sans-serif;
+  --ff-secondary: 'Roboto Slab', sans-serif;
 
   --ff-heading: var(--ff-primary);
   --ff-body: var(--ff-primary);
@@ -124,6 +131,14 @@ a {
 
 .bg-neutral-100 {
   color: var(--clr-neutral-100);
+}
+
+.ff-primary {
+  font-family: var(--ff-primary);
+}
+
+.ff-secondary {
+  font-family: var(--ff-secondary);
 }
 
 .fw-regular {
@@ -184,6 +199,14 @@ a {
 
 .text-highlight {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 60%, var(--clr-accent-300) 50%);
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 /* General */
@@ -317,32 +340,95 @@ footer .container {
 }
 
 .loader {
-  display: block;
-  width: 40px;
-  aspect-ratio: 2;
-  --_g: no-repeat radial-gradient(circle closest-side,#000 90%,#0000);
-  background: 
-    var(--_g) 0%   50%,
-    var(--_g) 50%  50%,
-    var(--_g) 100% 50%;
-  background-size: calc(100%/3) 50%;
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--clr-neutral-700);
+  --_m: 
+    conic-gradient(#0000 10%,#000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+  -webkit-mask-composite: source-out;
+          mask-composite: subtract;
   animation: l3 1s infinite linear;
 }
+@keyframes l3 {to{transform: rotate(1turn)}}
 
-@keyframes l3 {
-    20%{background-position:0%   0%, 50%  50%,100%  50%}
-    40%{background-position:0% 100%, 50%   0%,100%  50%}
-    60%{background-position:0%  50%, 50% 100%,100%   0%}
-    80%{background-position:0%  50%, 50%  50%,100% 100%}
+/* ----- HOME ----- */
+#hero {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rem;
 }
 
-/* Contact */
+#hero h1,
+#hero p {
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+}
+
+/* ----- ARTICLES ----- */
+.articles-previews {
+  margin-top: 2rem;
+}
+
+.article-preview-card {
+  margin-bottom: 3rem;
+}
+
+.article-preview-card h2 {
+  font-size: var(--fs-secondary-heading);
+  font-weight: var(--fw-bold);
+}
+
+.article-preview-card .flex-container {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: .3rem;
+}
+
+
+.article-preview-card .flex-container .thumbnail-container {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.article-preview-card .flex-container .thumbnail-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid var(--clr-neutral-900)
+}
+
+.article-preview-card .flex-container p {
+  width: 75%;
+}
+
+@media only screen and (max-width: 600px) {
+  .article-preview-card .flex-container .thumbnail-container {
+    display: none;
+  }
+
+  .article-preview-card .flex-container p {
+    width: 100%;
+  }
+}
+
+/* ----- CONTACT ----- */
 #contact-page {
-  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rem;
 }
 
 .social-links {
-  margin-top: 2rem;
+  margin-top: 4rem;
   padding-left: 1rem; /* don't know why it's not centered */
 }
 
@@ -372,7 +458,7 @@ footer .container {
   fill: var(--clr-neutral-800);
 }
 
-/* Books */
+/* ----- BOOKS ----- */
 #book-list h2 {
   display: none;
   margin-bottom: 0.5rem;

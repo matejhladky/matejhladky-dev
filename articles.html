@@ -8,14 +8,35 @@
   <body>
     <div id="header"></div>
 
-    <main>
+    <main id="articles">
       <div class="container">
-        <h2 class="text-center fs-primary-heading text-neutral-700">🚧 Under Construction 🚧</h2>
+        <div class="inner-content">
+          <h1 class="fs-primary-heading fw-bold">Articles</h1>
+          <p class="text-neutral-700 ff-secondary">I mainly write on <span><a href="https://medium.com/@matejhladky" target="_blank" class="text-underline text-neutral-700 ff-secondary">Medium!</a></span></p>
+          <div id="loader"></div>
+          <!-- <div class="articles-category-list">
+            <ul role="list">
+              <li><a href="#">All Articles</a></li>
+              <li><a href="#">Deep Learning</a></li>
+              <li><a href="#">Philosophy</a></li>
+              <li><a href="#">Productivity</a></li>
+              <li><a href="#">Neuroscience</a></li>
+              <li><a href="#">Health</a></li>
+            </ul>
+          </div> -->
+  
+          <div class="articles-previews">
+            <ul role="list" class="articles-previews-list">
+            </ul>
+          </div>
+        </div>
       </div>
     </main>
+  
 
     <div id="footer"></div>
 
     <script type="module" src="/main.js"></script>
+    <script type="module" src="/scripts/articleLoader.js"></script>
   </body>
 </html>
