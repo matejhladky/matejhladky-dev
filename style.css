@@ -365,8 +365,14 @@ footer .container {
 
 #hero h1,
 #hero p {
-  padding-left: 3.5rem;
-  padding-right: 3.5rem;
+  padding-inline: 3.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  #hero h1,
+  #hero p {
+    padding-inline: 1rem;
+  }
 }
 
 /* ----- ARTICLES ----- */
