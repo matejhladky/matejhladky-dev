@@ -205,6 +205,10 @@ a {
   text-decoration: underline;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 /* General */
 
 body {
