@@ -50,7 +50,7 @@ const createArticlePreviewComponent = (article) => {
     articlePreview.appendChild(title);
 
     const pubDate = document.createElement('p');
-    pubDate.className = 'pub-date fs-300 text-neutral-700';
+    pubDate.className = 'pub-date fs-300 text-neutral-700 ff-secondary';
     pubDate.textContent = formatDate(article.date_published);
     articlePreview.appendChild(pubDate);
 
