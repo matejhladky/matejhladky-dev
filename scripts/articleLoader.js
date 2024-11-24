@@ -29,7 +29,7 @@ const processArticle = (content) => {
     if (images.length > 0) { firstImageSrc = images[0].src; }
 
     Array.from(tmp.getElementsByTagName('figcaption')).forEach(figCaption => figCaption.replaceWith(" "));
-    const textContent = (tmp.textContent || tmp.innerText || "").substring(0, 400) + "...";
+    const textContent = (tmp.textContent || tmp.innerText || "").substring(0, 350) + "...";
 
     return { textContent, firstImageSrc };
   };
@@ -46,7 +46,7 @@ const createArticlePreviewComponent = (article) => {
     articlePreview.appendChild(title);
 
     const pubDate = document.createElement('p');
-    pubDate.className = 'pub-date fs-300 text-muted';
+    pubDate.className = 'pub-date fs-300 text-neutral-700';
     pubDate.textContent = formatDate(article.date_published);
     articlePreview.appendChild(pubDate);
 
@@ -66,7 +66,7 @@ const createArticlePreviewComponent = (article) => {
     
     const contentPreview = document.createElement('p');
     contentPreview.textContent = processedContent.textContent;
-    contentPreview.className = 'fs-400 text-muted';
+    contentPreview.className = 'fs-400 text-neutral-700';
     flexContainer.appendChild(contentPreview);
 
     articlePreviewContainer.appendChild(articlePreview);
