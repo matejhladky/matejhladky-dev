@@ -336,6 +336,19 @@ footer .container {
     80%{background-position:0%  50%, 50%  50%,100% 100%}
 }
 
+/* Home */
+#hero {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rem;
+}
+
+#hero h1,
+#hero p {
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+}
+
 /* Contact */
 #contact-page {
   margin-top: 1rem;
