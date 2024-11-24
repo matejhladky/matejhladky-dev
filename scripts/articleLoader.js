@@ -1,6 +1,9 @@
 import { formatDate } from "./utils";
 
 async function fetchAndDisplayArticles() {
+    const loader = document.getElementById('loader');
+    loader.style.display = 'block';
+    
     const articlePreviewsList = document.querySelector('.articles-previews-list');
 
     try {
@@ -17,9 +20,10 @@ async function fetchAndDisplayArticles() {
     } catch (error) {
         console.error("Error loading articles:", error);
     }
+
+    loader.style.display = 'none';
 }
 
-// Extracts first image as thumbnail and removes html tags from content
 const processArticle = (content) => {
     let tmp = document.createElement('div');
     tmp.innerHTML = content;
