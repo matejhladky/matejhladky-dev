@@ -421,7 +421,7 @@ footer .container {
 }
 
 /* ----- CONTACT ----- */
-#contact-page {
+#contact {
   display: flex;
   align-items: center;
   margin-bottom: 20rem;
