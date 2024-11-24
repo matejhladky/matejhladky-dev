@@ -66,7 +66,7 @@ const createArticlePreviewComponent = (article) => {
     
     const contentPreview = document.createElement('p');
     contentPreview.textContent = processedContent.textContent;
-    contentPreview.className = 'fs-400 text-neutral-700';
+    contentPreview.className = 'fs-400 text-neutral-700 ff-secondary';
     flexContainer.appendChild(contentPreview);
 
     articlePreviewContainer.appendChild(articlePreview);
