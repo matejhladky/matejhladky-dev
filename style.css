@@ -364,16 +364,29 @@ footer .container {
 }
 
 #hero h1,
+#hero h2,
+#hero ul,
 #hero p {
   padding-inline: 3.5rem;
 }
 
 @media only screen and (max-width: 600px) {
   #hero h1,
+  #hero h2,
+  #hero ul,
   #hero p {
     padding-inline: 1rem;
   }
 }
+
+#hero ul {
+  margin-top: .5rem;
+}
+
+#hero li {
+  list-style: none;
+}
+ 
 
 /* ----- ARTICLES ----- */
 .articles-previews {
