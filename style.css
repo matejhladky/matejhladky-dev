@@ -442,8 +442,8 @@ footer .container {
 /* ----- CONTACT ----- */
 #contact {
   display: flex;
-  align-items: center;
-  margin-bottom: 20rem;
+  align-items: start;
+  margin-top: 4rem;
 }
 
 .social-links {
