@@ -2,7 +2,8 @@
 
 *,
 *::before,
-*::after { box-sizing: border-box;
+*::after {
+  box-sizing: border-box;
 }
 
 * {
@@ -58,7 +59,7 @@ svg {
 
 /* Custom */
 *:focus {
-    outline: none;
+  outline: none;
 }
 
 a {
@@ -301,8 +302,10 @@ main {
   text-decoration: nonggVGe;
   color: var(--clr-neutral-900);
   display: block;
-  position: relative; /* Required for pseudo-element */
-  overflow: hidden; /* Hide the background gradient */
+  position: relative;
+  /* Required for pseudo-element */
+  overflow: hidden;
+  /* Hide the background gradient */
 }
 
 .nav-link::before {
@@ -313,12 +316,14 @@ main {
   width: 100%;
   height: 100%;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 60%, var(--clr-accent-300) 50%);
-  transition: left 0.3s; /* Transition the left position */
+  transition: left 0.3s;
+  /* Transition the left position */
   z-index: -1;
 }
 
 .nav-link:hover::before {
-  left: 0; /* Move the highlight to the right on hover */
+  left: 0;
+  /* Move the highlight to the right on hover */
 }
 
 footer {
@@ -345,16 +350,21 @@ footer .container {
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--clr-neutral-700);
-  --_m: 
-    conic-gradient(#0000 10%,#000),
+  --_m:
+    conic-gradient(#0000 10%, #000),
     linear-gradient(#000 0 0) content-box;
   -webkit-mask: var(--_m);
-          mask: var(--_m);
+  mask: var(--_m);
   -webkit-mask-composite: source-out;
-          mask-composite: subtract;
+  mask-composite: subtract;
   animation: l3 1s infinite linear;
 }
-@keyframes l3 {to{transform: rotate(1turn)}}
+
+@keyframes l3 {
+  to {
+    transform: rotate(1turn)
+  }
+}
 
 /* ----- HOME ----- */
 #hero {
@@ -371,6 +381,7 @@ footer .container {
 }
 
 @media only screen and (max-width: 600px) {
+
   #hero h1,
   #hero h2,
   #hero ul,
@@ -386,7 +397,7 @@ footer .container {
 #hero li {
   list-style: none;
 }
- 
+
 
 /* ----- ARTICLES ----- */
 .articles-previews {
@@ -439,6 +450,60 @@ footer .container {
   }
 }
 
+/* ----- PROJECTS ----- */
+.project-item {
+  padding: 0.7rem 1.5rem 0.5rem;
+  margin: 1rem auto;
+  max-width: 800px;
+  /* border: 1px solid var(--clr-neutral-700); */
+  border-left: 4px solid transparent;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-item:hover {
+  transform: translateX(5px);
+  border-left-color: var(--clr-accent-300);
+  background-color: #f8f9fa;
+}
+
+.project-item h3 a {
+  color: var(--clr-neutral-900);
+  text-decoration: none;
+}
+
+.project-item h3 a:hover {
+  text-decoration: underline;
+}
+
+.project-item p, p a {
+  margin: 0 0 15px;
+  color: var(--clr-neutral-700)
+}
+
+.project-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--clr-neutral-700)
+}
+
+.project-footer span {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.language-indicator {
+      width: 10px;
+      height: 10px;
+      background-color: #f1e05a;
+      border-radius: 50%;
+    }
+
 /* ----- CONTACT ----- */
 #contact {
   display: flex;
@@ -448,7 +513,8 @@ footer .container {
 
 .social-links {
   margin-top: 4rem;
-  padding-left: 1rem; /* don't know why it's not centered */
+  padding-left: 1rem;
+  /* don't know why it's not centered */
 }
 
 .social-links-list {
@@ -504,4 +570,3 @@ footer .container {
 #book-list .title {
   color: var(--clr-neutral-800);
 }
-
