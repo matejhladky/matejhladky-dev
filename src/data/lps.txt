@@ -1,0 +1,44 @@
+# Records. One entry per line, under the section it belongs to:
+#
+#   - Artist: Title
+#   - Artist: Title https://where-to-buy.example
+#
+#   Artist / title   split at the first colon, so titles may contain colons.
+#   Link (optional)  a URL at the end of the line makes the title clickable.
+#   Cover (optional) an image in src/data/covers/ named after the line:
+#                    lowercase, no accents, everything else turned into dashes.
+#                    - Lana Del Rey: Blue Banisters  ->  lana-del-rey-blue-banisters.jpg
+#                    jpg, png, webp or avif, any size. Without one, a placeholder shows.
+#
+# Sections: priority (shown first, with a blue square), other, hidden (never
+# shown on the site). Entries appear on the site in the order listed here
+# (currently sorted by artist, then title). Lines starting with # are comments.
+
+# priority
+- FKJ: Just Piano
+- Lana Del Rey: Blue Banisters
+- Bon Iver: For Emma, Forever Ago
+- The Spinners: Happiness Is Being with the Spinners
+- Noah Kahan: Stick Season
+- Lana Del Rey: Did You Know That There's a Tunnel Under Ocean Blvd
+
+# other
+- Earth, Wind & Fire: Gratitude
+- Etta James: Deep in the Night
+- Etta James: Etta James (1962)
+- Etta James: Etta James (1973)
+- Etta James: Etta James Rocks the House
+- Etta James: Tell Mama
+- Lana Del Rey: Born to Die
+- Lana Del Rey: Honeymoon
+- Lana Del Rey: Lust for Life
+- Lana Del Rey: Norman Fucking Rockwell!
+- Lana Del Rey: Ultraviolence
+- Noah Kahan: Busyhead
+- Noah Kahan: I Was / I Am
+- Sufjan Stevens: Sufjan Stevens Invites You To: Come On Feel the Illinoise
+- The Spinners: Mighty Love
+- The Spinners: New and Improved
+- The Spinners: Spinners
+
+# hidden

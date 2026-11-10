@@ -1,0 +1,174 @@
+# Books. One entry per line, under the section it belongs to:
+#
+#   - Author: Title
+#   - Author: Title https://where-to-buy.example
+#
+#   Author / title   split at the first colon, so titles may contain colons.
+#                    Several authors: separate them with commas, e.g.
+#                    - Brian W. Kernighan, Dennis M. Ritchie: The C Programming Language
+#   Link (optional)  a URL at the end of the line makes the title clickable.
+#
+# Sections: priority (shown first, with a blue square), other, hidden (never
+# shown on the site). Entries appear on the site in the order listed here
+# (currently sorted by author, then title). Lines starting with # are comments.
+
+# priority
+- Nils J. Nilsson: The Quest for Artificial Intelligence
+- John von Neumann: The Computer and the Brain
+- Linus Torvalds: Just for Fun
+- Simon J. D. Prince: Understanding Deep Learning
+- Anil Ananthaswamy: Why Machines Learn
+
+# other
+- Aldous Huxley: Brave New World
+- Bjørn Lomborg: How to Spend $75 Billion to Make the World a Better Place
+- Fei-Fei Li: The Worlds I See
+- François Fleuret: The Little Book of Deep Learning
+- Marvin Minsky, Seymour Papert: Perceptrons: An Introduction to Computational Geometry
+- Nils J. Nilsson: Learning Machines
+- Norbert Wiener: Cybernetics: Or Control and Communication in the Animal and the Machine
+- Oliver Sacks: Awakenings
+- Remzi H. Arpaci-Dusseau, Andrea C. Arpaci-Dusseau: Operating Systems: Three Easy Pieces
+- Richard P. Feynman: Six Easy Pieces
+- Richard P. Feynman: Six Not-So-Easy Pieces
+- Richard P. Feynman: The Pleasure of Finding Things Out
+- Robert Graves: I, Claudius
+- Robert Greene: Mastery
+- Sebastian Raschka: Machine Learning with PyTorch and Scikit-Learn
+- Seth Weidman: Deep Learning from Scratch
+- Vivienne Sze, Yu-Hsin Chen, Tien-Ju Yang, Joel S. Emer: Efficient Processing of Deep Neural Networks
+- Walter Isaacson: Einstein: His Life and Universe
+
+# hidden
+- Adolf Hitler: Mein Kampf
+- Alan Tucker: Applied Combinatorics
+- Aldous Huxley: Island
+- Aldous Huxley: Point Counter Point
+- Aleksandr Solzhenitsyn: Cancer Ward
+- Aleksandr Solzhenitsyn: The First Circle
+- Allan Pease, Barbara Pease: The Definitive Book of Body Language
+- Angus Deaton: The Great Escape: Health, Wealth and the Origins of Inequality
+- Anthony Robbins: Awaken the Giant Within
+- Anthony Storr: Freud: A Very Short Introduction
+- Bernard Lewis: The Crisis of Islam: Holy War and Unholy Terror
+- Bjarne Stroustrup: The C++ Programming Language
+- Brian W. Kernighan, Dennis M. Ritchie: The C Programming Language
+- Burrhus F. Skinner: Verbal Behavior
+- C. G. Jung: Aion: Researches into the Phenomenology of the Self
+- C. G. Jung: Answer to Job
+- C. G. Jung: Modern Man in Search of a Soul
+- C. G. Jung: Mysterium Coniunctionis
+- C. G. Jung: Psychology and Alchemy
+- C. G. Jung: Psychology and Religion: West and East
+- C. G. Jung: Symbols of Transformation
+- C. G. Jung: The Archetypes and the Collective Unconscious
+- C. G. Jung: The Symbolic Life: Miscellaneous Writings
+- C. G. Jung: Two Essays on Analytical Psychology
+- Carl R. Rogers: A Way of Being
+- Caxton C. Foster: Computer Architecture
+- Claudio Conti: Quantum Machine Learning
+- Dan Saracino: Abstract Algebra
+- Daniel Keyes: Flowers for Algernon
+- Dashiell Hammett: The Maltese Falcon
+- David Grinspoon: Earth in Human Hands
+- Derek J. de Solla Price: Little Science, Big Science and Beyond
+- Donald Knuth: The Art of Computer Programming (I-IV)
+- Donald O. Hebb: The Organization of Behavior: A Neuropsychological Theory
+- Edvard Radzinsky: Stalin
+- Edward B. Saff, Arthur D. Snider: Fundamentals of Complex Analysis with Applications to Engineering and Science
+- Eli Stevens, Luca Antiga, Thomas Viehmann: Deep Learning with PyTorch
+- Elkhonon Goldberg: The New Executive Brain
+- Emily Brontë: Wuthering Heights
+- Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides: Design Patterns: Elements of Reusable Object-Oriented Software
+- Erich Neumann: The Great Mother
+- Erich Neumann: The Origins and History of Consciousness
+- Ernest Becker: The Denial of Death
+- Ernest S. Bates: The Bible: Designed to Be Read as Living Literature
+- Erwin Kreyszig: Introductory Functional Analysis with Applications
+- Frank Rosenblatt: Principles of Neurodynamics
+- Friedrich Nietzsche: On the Genealogy of Morals
+- Friedrich Nietzsche: The Anti-Christ
+- Friedrich Nietzsche: The Gay Science
+- Friedrich Nietzsche: The Will to Power
+- Fyodor Dostoevsky: Demons
+- Fyodor Dostoevsky: Notes from Underground
+- Gary Chartrand, Albert D. Polimeni, Ping Zhang: Mathematical Proofs: A Transition to Advanced Mathematics
+- George Boole: An Investigation of the Laws of Thought on Which Are Founded the Mathematical Theories of Logic and Probabilities
+- George Orwell: The Road to Wigan Pier
+- Halsey Royden, Patrick Fitzpatrick: Real Analysis
+- Hans Eysenck: Genius
+- Hans Rosling: Factfulness
+- Harper Lee: To Kill a Mockingbird
+- Henri F. Ellenberger: The Discovery of the Unconscious: The History and Evolution of Dynamic Psychiatry
+- Henri Troyat: Tolstoy
+- Hernando de Soto: The Mystery of Capital
+- Hunter S. Thompson: Fear and Loathing in Las Vegas
+- Huston Smith: The World's Religions
+- Jaak Panksepp: Affective Neuroscience
+- James J. Gibson: The Ecological Approach to Visual Perception
+- James Stewart: Calculus
+- Jean Piaget: Play, Dreams and Imitation in Childhood
+- Jean Piaget: The Moral Judgment of the Child
+- Jean-Michel Quinodoz: Reading Freud: A Chronological Exploration of Freud's Writings
+- Jeffrey A. Gray, Neil McNaughton: The Neuropsychology of Anxiety
+- Jeffrey B. Russell: Mephistopheles: The Devil in the Modern World
+- Johan Norberg: Progress: Ten Reasons to Look Forward to the Future
+- John Gall: Systemantics
+- John Hopcroft, Jeffrey Ullman: Introduction to Automata Theory, Languages, and Computation
+- John Hornsby, Margaret Lial, Gary Rockswold: A Graphical Approach to Algebra & Trigonometry
+- John Steinbeck: East of Eden
+- John Steinbeck: Of Mice and Men
+- John Steinbeck: The Grapes of Wrath
+- Joseph LeDoux: The Emotional Brain: The Mysterious Underpinnings of Emotional Life
+- Joyce Cary: The Horse's Mouth
+- Ken Kesey: One Flew Over the Cuckoo's Nest
+- Ken Kesey: Sometimes a Great Notion
+- Kushal Anjaria, Aditi Bajpai, Akshara Kumari, Tanmoy Hazra: Applications of Game Theory in Deep Learning
+- Larry C. Andrews: Ordinary Differential Equations with Applications
+- Larry W. Swanson: Brain Architecture: Understanding the Basic Plan
+- Leo Tolstoy: War and Peace
+- Margaret Laurence: The Stone Angel
+- Marvin Minsky: Computation: Finite and Infinite Machines
+- Marvin Minsky: Semantic Information Processing
+- Matt Ridley: The Rational Optimist
+- Matthew F. Dixon, Igor Halperin, Paul Bilokon: Machine Learning in Finance
+- Michael Spivak: Calculus
+- Mircea Eliade: Myth and Reality
+- Mircea Eliade: Myths, Dreams, and Mysteries
+- Mircea Eliade: Shamanism
+- Mircea Eliade: The Forge and the Crucible
+- Mircea Eliade: The Sacred and the Profane
+- Nikos Kazantzakis: The Fratricides
+- Nikos Kazantzakis: Zorba the Greek
+- Noam Chomsky: Aspects of the Theory of Syntax
+- Northrop Frye: The Great Code
+- Northrop Frye: Words with Power
+- Paul Halmos: Naive Set Theory
+- Paul W. Murrill, Cecil Smith: Introduction to Computer Science
+- Ramit Sethi: I Will Teach You to Be Rich
+- Ray Kurzweil: How to Create a Mind: The Secret of Human Thought Revealed
+- Raymond Chandler: The Big Sleep
+- Raymond Chandler: The Long Goodbye
+- Robert E. Greene, Theodore Gamelin: Introduction to Topology
+- Rollo May, Ernest Angel, Henri F. Ellenberger: Existence
+- Ronald Gould: Graph Theory
+- Samuel Shem: The House of God
+- Sheldon M. Ross: A First Course in Probability
+- Sigmund Freud: An Outline of Psycho-Analysis
+- Sigmund Freud: Civilization and Its Discontents
+- Sigmund Freud: The Interpretation of Dreams
+- Sigmund Freud: Three Essays on the Theory of Sexuality
+- Stendhal: The Charterhouse of Parma
+- Stendhal: The Red and the Black
+- Stephen H. Friedberg, Arnold J. Insel, Lawrence E. Spence: Linear Algebra
+- Steven Pinker: Enlightenment Now: The Case for Reason, Science, Humanism, and Progress
+- Susanna S. Epp: Discrete Mathematics with Applications
+- Terence Tao: Analysis I
+- Terence Tao: Analysis II
+- Theodore Dalrymple: Life at the Bottom
+- Theodore Dalrymple: Our Culture, What's Left of It
+- Theodore M. Porter: The Rise of Statistical Thinking, 1820–1900
+- Tom Wolfe: The Electric Kool-Aid Acid Test
+- William Aspray: Computing Before Computers
+- William Golding: Lord of the Flies
+- William L. Shirer: The Rise and Fall of the Third Reich

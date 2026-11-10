@@ -1,0 +1,38 @@
+---
+// Every page is the same thing: one card on a page. This layout is that card;
+// the page's own content goes where <slot /> is.
+import '@fontsource-variable/jetbrains-mono';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Keep the page out of search engines. */
+  noindex?: boolean;
+  /** Wider card, pinned to the top — for the long lists. */
+  wide?: boolean;
+  /** Language of the page's text ('cs' for the lists). */
+  lang?: string;
+}
+
+const { title, description, noindex = false, wide = false, lang = 'en' } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    {description && <meta name="description" content={description} />}
+    {noindex && <meta name="robots" content="noindex" />}
+    <title>{title}</title>
+  </head>
+  <body>
+    <main class:list={['stage', { wide }]}>
+      <article class="card">
+        <slot />
+      </article>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+---
+// One panel of the library: heading, then the priority and other sections.
+import Entry from './Entry.astro';
+import type { List } from '../lib/collections';
+
+interface Props {
+  /** Matches the #fragment that shows this panel, e.g. "knihy". */
+  id: string;
+  heading: string;
+  items: List;
+  /** Show album covers next to the entries. */
+  covers?: boolean;
+}
+
+const { id, heading, items, covers = false } = Astro.props;
+---
+
+<section class={`shelf shelf-${id}`}>
+  <h1>{heading}</h1>
+
+  {items.priority.length > 0 && (
+    <>
+      <h2>prioritní</h2>
+      <ul class="ledger priority">
+        {items.priority.map((item) => <Entry item={item} covers={covers} />)}
+      </ul>
+    </>
+  )}
+
+  {items.other.length > 0 && (
+    <>
+      <h2>ostatní</h2>
+      <ul class="ledger">
+        {items.other.map((item) => <Entry item={item} covers={covers} />)}
+      </ul>
+    </>
+  )}
+</section>

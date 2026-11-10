@@ -1,0 +1,26 @@
+---
+// One row: [cover,] title (linked if it has a url), author/artist.
+// Everything stays on one line; long text is cut off with "…" (hover shows it whole).
+import { Image } from 'astro:assets';
+import type { Item } from '../lib/collections';
+
+interface Props {
+  item: Item;
+  /** Show a cover column (records). Missing covers get a placeholder. */
+  covers?: boolean;
+}
+
+const { item, covers = false } = Astro.props;
+---
+
+<li class:list={[{ 'with-cover': covers }]}>
+  {covers && (item.cover
+    ? <Image class="cover" src={item.cover} alt="" width={128} />
+    : <span class="cover placeholder" aria-hidden="true"></span>)}
+  <span class="title">
+    {item.url
+      ? <><a class="text" href={item.url} title={item.title}>{item.title}</a><span class="out" aria-hidden="true">↗</span></>
+      : <span class="text" title={item.title}>{item.title}</span>}
+  </span>
+  <span class="by" title={item.by}>{item.by}</span>
+</li>

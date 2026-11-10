@@ -1,0 +1,30 @@
+---
+import Card from '../layouts/Card.astro';
+
+// Seznam's own page about its machine learning & AI teams.
+const seznam = 'https://o-seznam.cz/kariera/vyzkum/';
+
+const links = [
+  { label: 'email', href: 'mailto:mat.hladky@gmail.com' },
+  { label: 'x', href: 'https://x.com/matejhladky_dev' },
+  { label: 'linkedin', href: 'https://www.linkedin.com/in/matej-hladky/' },
+];
+---
+
+<Card title="matěj hladký" description="Matěj Hladký — machine learning engineer in Prague, working on inference optimization at Seznam.">
+  <h1>matěj hladký</h1>
+  <p class="role">machine learning engineer · prague</p>
+
+  <div class="bio">
+    <p>
+      I work on inference optimization at <a href={seznam}>Seznam</a>. Beyond that, I spend
+      my time around (artificial) intelligence, mathematics, and building things from scratch
+      to understand how they work.
+    </p>
+    <p>Away from the keyboard, it's mostly <a href="/library">books and music</a>.</p>
+  </div>
+
+  <ul class="links" aria-label="contact links">
+    {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+  </ul>
+</Card>
