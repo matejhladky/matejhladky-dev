@@ -17,10 +17,11 @@
 - John von Neumann: The Computer and the Brain
 - Linus Torvalds: Just for Fun
 - Simon J. D. Prince: Understanding Deep Learning
-- Anil Ananthaswamy: Why Machines Learn
+- Marco Pierre White: White Heat
 
 # other
 - Aldous Huxley: Brave New World
+- Anil Ananthaswamy: Why Machines Learn
 - Bjørn Lomborg: How to Spend $75 Billion to Make the World a Better Place
 - Fei-Fei Li: The Worlds I See
 - François Fleuret: The Little Book of Deep Learning

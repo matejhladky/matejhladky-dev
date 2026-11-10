@@ -166,7 +166,9 @@ h2 {
   height: 0.5rem;
   margin-right: 0.6rem;
   background: var(--blue);
-  align-self: center;
+  /* centred on the first line, so it stays put when a title wraps */
+  align-self: flex-start;
+  margin-top: calc((1.7em - 0.5rem) / 2);
 }
 
 /* titles with a shop link get a small arrow, which never gets cut off */
@@ -199,4 +201,7 @@ h2 {
   .ledger li.with-cover { grid-template-columns: 4rem minmax(0, 1fr); }
   .with-cover .cover { grid-row: span 2; }
   .with-cover .by { grid-column: 2; }
+
+  /* phones can't hover for the full text, so titles wrap instead of "…" */
+  .ledger .title .text { white-space: normal; overflow-wrap: anywhere; }
 }
