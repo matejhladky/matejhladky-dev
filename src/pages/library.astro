@@ -1,0 +1,27 @@
+---
+// Books and records on one page. The tabs are plain links to #knihy / #desky;
+// CSS shows the matching shelf (see "library" in global.css). No JavaScript.
+import Card from '../layouts/Card.astro';
+import Shelf from '../components/Shelf.astro';
+import { library, records } from '../lib/collections';
+
+const shelves = [
+  { id: 'knihy', label: 'knihy', heading: 'mateova (budoucí) knihovna', items: library, covers: false },
+  { id: 'desky', label: 'desky', heading: 'mateova (budoucí) vinylotéka', items: records, covers: true },
+];
+---
+
+<Card title="knihovna — matěj hladký" description="Knihy a desky, které chci mít." lang="cs" wide>
+  {shelves.map((s) => <span id={s.id} class="anchor"></span>)}
+
+  <div class="top">
+    <a class="back" href="/">← matěj hladký</a>
+    <nav class="tabs" aria-label="knihovna">
+      {shelves.map((s) => (
+        <a class={`tab tab-${s.id}`} href={`#${s.id}`}>{s.label}</a>
+      ))}
+    </nav>
+  </div>
+
+  {shelves.map((s) => <Shelf id={s.id} heading={s.heading} items={s.items} covers={s.covers} />)}
+</Card>

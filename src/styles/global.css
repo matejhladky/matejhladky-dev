@@ -1,0 +1,202 @@
+/* One index card on a page: small mono type, a white card,
+   offset by a solid block of pale blue. */
+
+:root {
+  --paper: #f2f2ef;
+  --card: #ffffff;
+  --ink: #222;
+  --soft: #5b5b5b;
+  --quiet: #999;
+  --rule: #ecebe7;
+  --blue: #a3b8e2;
+  --blue-deep: #3a5694;
+
+  --mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+}
+
+/* ---------- reset ---------- */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ---------- page & card ---------- */
+
+html { background: var(--paper); }
+
+body {
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 13.5px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.stage {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: clamp(1.25rem, 6vw, 4rem) clamp(1.25rem, 5vw, 3rem) clamp(2rem, 8vw, 5rem);
+}
+
+.stage.wide { place-items: start center; }
+
+.card {
+  width: 100%;
+  max-width: 30rem;
+  background: var(--card);
+  border: 1px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--blue);
+  padding: 1.75rem 2rem 1.5rem;
+}
+
+.wide .card { max-width: 46rem; }
+
+@media (max-width: 30rem) {
+  .card { padding: 1.4rem 1.25rem 1.25rem; }
+}
+
+/* ---------- text ---------- */
+
+h1 { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.02em; }
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--blue);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
+}
+
+a:hover { color: var(--blue-deep); }
+
+:focus-visible { outline: 2px solid var(--blue-deep); outline-offset: 2px; }
+
+
+/* ---------- home ---------- */
+
+.role { color: var(--blue-deep); margin-top: 0.1rem; }
+
+.bio { margin-top: 1.4rem; color: var(--soft); }
+.bio p + p { margin-top: 0.75rem; }
+
+.links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--rule);
+}
+
+/* ---------- library: tabs ---------- */
+
+/* back link on the left, tabs on the right */
+.top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+
+.back { font-size: 12px; color: var(--quiet); text-decoration: none; }
+.back:hover { color: var(--ink); }
+
+.tabs { display: flex; gap: 1.25rem; font-size: 12px; }
+.tab { color: var(--quiet); text-decoration: none; }
+.tab:hover { color: var(--ink); }
+
+/* The tabs link to #knihy / #desky. Those ids sit on empty spans pinned to the
+   very top of the page, so following them never scrolls. */
+.anchor { position: absolute; top: 0; }
+
+/* active tab: books by default, otherwise whichever one is in the URL */
+body:not(:has(.anchor:target)) .tab-knihy,
+body:has(#knihy:target) .tab-knihy,
+body:has(#desky:target) .tab-desky {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--blue);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.35em;
+}
+
+/* show only the matching shelf (a browser without :has just shows both) */
+body:not(:has(.anchor:target)) .shelf:not(.shelf-knihy),
+body:has(#knihy:target) .shelf:not(.shelf-knihy),
+body:has(#desky:target) .shelf:not(.shelf-desky) {
+  display: none;
+}
+
+/* ---------- library: lists ---------- */
+
+.shelf h1 { margin-top: 1.25rem; }
+
+h2 {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--quiet);
+  margin-top: 1.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--ink);
+}
+
+.ledger { list-style: none; }
+
+.ledger li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr);
+  column-gap: 1.25rem;
+  padding-block: 0.35rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* one line per row: long titles and names end in "…" instead of wrapping */
+.ledger .title { display: flex; align-items: baseline; min-width: 0; }
+
+.ledger .text,
+.ledger .by {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ledger .by { color: var(--quiet); }
+
+/* priority items get a small pale-blue square */
+.ledger.priority .title::before {
+  content: '';
+  flex: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.6rem;
+  background: var(--blue);
+  align-self: center;
+}
+
+/* titles with a shop link get a small arrow, which never gets cut off */
+.ledger .out { flex: none; margin-left: 0.3em; color: var(--quiet); }
+
+/* records: a cover thumbnail in front of each row */
+.ledger li.with-cover {
+  grid-template-columns: 4rem minmax(0, 1fr) minmax(0, 0.7fr);
+  align-items: center;
+}
+
+.cover {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+}
+
+/* no cover yet: a small record — pale-blue label, light grey disc */
+.cover.placeholder {
+  background:
+    radial-gradient(circle, var(--card) 0 4%, var(--blue) 5% 17%, transparent 18%),
+    radial-gradient(circle, #e4e3de 0 40%, transparent 41%),
+    var(--paper);
+}
+
+@media (max-width: 34rem) {
+  .ledger li { grid-template-columns: 1fr; }
+  .ledger li.with-cover { grid-template-columns: 4rem minmax(0, 1fr); }
+  .with-cover .cover { grid-row: span 2; }
+  .with-cover .by { grid-column: 2; }
+}
